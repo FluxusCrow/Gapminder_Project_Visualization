@@ -15,6 +15,7 @@ To create the gif file, run in your terminal:
 ```
 $ python 1_Project.py
 ```
+This will save plots for the years 1960-2015 in the folder lifeexp_images and creates the file "output.gif"
 
 ## Source
 This programm is inspired by Hans Rosling's animated plot
