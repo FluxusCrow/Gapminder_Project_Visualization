@@ -14,35 +14,20 @@ pop = pd.read_excel("gapminder_population.xlsx", index_col=0, nrows=260)
 life = pd.read_excel("gapminder_lifeexpectancy.xlsx", index_col=0)
 
 
-# check shape of tables
-print(life.shape)
-print(pop.shape)
-print(fert.shape)
-
-# check columns of tables
-print(fert.columns)
-print(life.columns)
-print(pop.columns)
-
 # convert columns from string to integer
 fert.columns = fert.columns.astype(int)
-print(fert.columns)
 
 # check row index of tables and change its name
-print(fert.index)
 fert.index.name = "country"
-print(fert.index)
 
 # Converting fert table to long format
 fert = fert.reset_index()
 fert = fert.melt(id_vars="country", var_name="year", value_name="fertility_rate")
-print(fert)
 
 # Converting life table to long format
 life.index.name = "country"
 life = life.reset_index()
 life = life.melt(id_vars="country", var_name="year", value_name="life_expectancy")
-print(life)
 
 # Converting pop table to long format
 pop.index.name = "country"
@@ -68,7 +53,7 @@ for date in pd.unique(df["year"]):
 		df_subset_x = df.loc[df["year"] == date]
 		popsize = df_subset_x["population"]*1000
 		sns.scatterplot(x="life_expectancy", y="fertility_rate", size="population", sizes=(10, 200), data=df_subset_x, alpha=0.6, legend=False)
-		#plt.savefig(fname=("lifeexp_images/lifeexp_"+str(date)), format="png")
+		plt.savefig(fname=("lifeexp_images/lifeexp_"+str(date)), format="png")
 		plt.close()
 
 # Create gif
@@ -78,4 +63,4 @@ for i in range(1960,2015):
 	filename = "lifeexp_images/lifeexp_{}".format(i)
 	images.append(imageio.imread(filename))
 
-#imageio.mimsave("output.gif", images, fps=20)
+imageio.mimsave("output.gif", images, fps=20)
