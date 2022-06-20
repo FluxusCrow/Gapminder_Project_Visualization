@@ -6,10 +6,12 @@ This programm creates a gif file from the gapminder data showing the change of f
 ## Technologies
 Python 3.9.7
 libraries and its versions are listed in requirements.txt and can be installed with:
+
 $ conda install --name <environment_name> --file requirements.txt
 
 ## Setup
 To create the gif file, run in your terminal:
+
 $ python 1_Project.py
 
 ## Source
