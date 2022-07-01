@@ -9,9 +9,9 @@ import seaborn as sns
 import imageio
 
 # get data
-fert = pd.read_csv("gapminder_total_fertility.csv", index_col=0)
-pop = pd.read_excel("gapminder_population.xlsx", index_col=0, nrows=260)
-life = pd.read_excel("gapminder_lifeexpectancy.xlsx", index_col=0)
+fert = pd.read_csv("data/gapminder_total_fertility.csv", index_col=0)
+pop = pd.read_excel("data/gapminder_population.xlsx", index_col=0, nrows=260)
+life = pd.read_excel("data/gapminder_lifeexpectancy.xlsx", index_col=0)
 
 
 # convert columns from string to integer
